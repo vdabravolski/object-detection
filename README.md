@@ -19,17 +19,22 @@ Consider following typical problems when dealing with object detection:
 Proposed in 2005, Histogram of Oriented Gradients (HOG) provides a feture descriptor which can be used for object detection tasks. HOG is computationally inexpensive and is being used for  years in production systems. Typical tasks include but not limited to face detection, person detection.
 
 ## R-CNN
-R-CNN ("Region-based Convolutional Neural Network") is a family of related algorithms. At the core is idea to nominate a specific regions which contain objects with high probability and run CNN on these candidate regions for further object classification. 
+R-CNN ("Region-based Convolutional Neural Network") is a family of related algorithms. These algorithms has two stages:
+* first stage - nominate region candidates for object locations;
+* second stage - classify objects in the nominated regions.
 
 Currently, [Faster-RCNN](https://arxiv.org/abs/1506.01497) algorithm is considered a state of art for  object detection, combining high accuracy with good performance. 
 
-A further extension, [Mask R-CNN] (https://github.com/matterport/Mask_RCNN) provides pixel segmentation capabilities.
+A further extension, [Mask R-CNN](https://github.com/matterport/Mask_RCNN) provides pixel segmentation capabilities.
 
 ## YOLO
-YOLO ("you only look once")
+YOLO ("you only look once") - unlike RCNN algorithms, YOLO uses 
 
 ## SSD
 Single Shot Detector (SSD)
+
+## F-RCN
+Unlike other region-based algorithms, Region-based Fully Convolutional Network ([F-RCN](https://arxiv.org/pdf/1605.06409.pdf)) applies computation to entire images. This significantly reduces algorithmic complexity and inference latency while keeping accuracy on-par with state of art R-CNN.
 
 # Frameworks Overview
 TBD.
@@ -39,5 +44,5 @@ TBD.
 
 # Proposed Labs
 1. Object recognition using R-CNN;
-2. Object segmentation using Mask RCNN;
-4. Object detection on video stream using YOLO3.
+2. Object detection on video stream using F-RCN;
+4. Object detection at the edge.
